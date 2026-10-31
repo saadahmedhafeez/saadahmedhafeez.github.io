@@ -1,1 +1,257 @@
-<!doctype html><meta charset="utf-8"><title>Saad Ahmed Hafeez</title><p>Apps by Saad Ahmed Hafeez: <a href="https://play.google.com/store/apps/details?id=com.triviumdaily.app">Trivium Daily</a> · <a href="/trivium-privacy/">Privacy policy</a></p>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Saad Ahmed Hafeez · Senior Software Engineer</title>
+<meta name="description" content="Saad Ahmed Hafeez, Senior Software Engineer. Python, FastAPI and Django backends, React/Next.js frontends, and AI agents in production.">
+<meta property="og:title" content="Saad Ahmed Hafeez · Senior Software Engineer">
+<meta property="og:description" content="Python, full stack and AI agents. Selected work: AI recruitment platform, IMVI, Trivium Daily, Databricks analytics, Lineups.com ($45M exit).">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23232842'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Georgia,serif' font-size='30' fill='%23e6c66a'%3ESH%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #12141f;
+    --panel: #1a1d2c;
+    --panel-2: #20243a;
+    --line: rgba(214, 218, 224, .14);
+    --text: #e8eaee;
+    --muted: #a9afbb;
+    --gold: #e0bd62;
+    --gold-grad: linear-gradient(100deg, #b8902f 0%, #e6c66a 40%, #fbeab0 60%, #d4a73a 100%);
+    --silver-grad: linear-gradient(180deg, #ffffff 0%, #e2e4e8 50%, #b4b9c1 80%, #eceef1 100%);
+    --serif: "Cormorant Garamond", Georgia, serif;
+    --sans: "Lato", "Segoe UI", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); font-weight: 400; line-height: 1.6; font-size: 16.5px; }
+  a { color: var(--gold); text-decoration: none; }
+  a:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+
+  /* hero: same grey → navy → copper grain as the LinkedIn banner */
+  .hero { position: relative; overflow: hidden; padding: 112px 0 96px; text-align: center;
+          background:
+            radial-gradient(ellipse 45% 130% at 100% 100%, rgba(196,118,72,.80), transparent 70%),
+            radial-gradient(ellipse 45% 140% at 0% 40%, rgba(160,163,170,.75), transparent 70%),
+            linear-gradient(105deg, #8f9299 0%, #565b69 20%, #2c3146 42%, #262a3c 58%, #3b3038 76%, #8a5639 100%); }
+  .hero::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .5; mix-blend-mode: overlay;
+                 background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  .hero .ring { position: absolute; left: 50%; top: 50%; width: min(620px, 92vw); aspect-ratio: 1; transform: translate(-50%, -50%);
+                border-radius: 50%; border: 1px solid rgba(214,218,224,.22); }
+  .hero .inner { position: relative; z-index: 1; }
+  .hero h1 { font-family: var(--serif); font-weight: 300; font-size: clamp(38px, 9vw, 80px); line-height: 1.05;
+             background: var(--silver-grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .hero .role { margin-top: 6px; font-family: var(--serif); font-size: clamp(24px, 4vw, 36px); letter-spacing: 1px;
+                background: var(--gold-grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .hero .tags { margin-top: 18px; font-size: 13px; letter-spacing: 4px; text-transform: uppercase; color: #dde0e5; }
+  .hero .bar { width: 44px; height: 1.5px; margin: 14px auto 0; background: var(--gold-grad); }
+  .hero .lede { max-width: 620px; margin: 26px auto 0; color: #e3e5ea; font-size: 17.5px; }
+  .cta { margin-top: 30px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 20px; border-radius: 999px; font-size: 15px;
+         border: 1px solid rgba(224,189,98,.65); color: #fff; background: rgba(18,20,31,.35); backdrop-filter: blur(2px); }
+  .btn.primary { background: var(--gold-grad); color: #1b1608; border-color: transparent; font-weight: 700; }
+  .btn:hover { text-decoration: none; filter: brightness(1.08); }
+  .btn svg { width: 16px; height: 16px; fill: currentColor; }
+
+  section { padding: 72px 0 8px; }
+  h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(30px, 4vw, 40px); color: #f1f2f5; }
+  h2::after { content: ""; display: block; width: 40px; height: 1.5px; margin-top: 10px; background: var(--gold-grad); }
+  .intro { margin-top: 14px; color: var(--muted); max-width: 720px; }
+
+  .grid { margin-top: 30px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 24px 24px 20px; display: flex; flex-direction: column; }
+  .card .kicker { font-size: 12.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); }
+  .card h3 { margin-top: 6px; font-family: var(--serif); font-weight: 500; font-size: 27px; line-height: 1.15; color: #fff; }
+  .card ul { margin: 12px 0 0 18px; color: #cfd3da; font-size: 15.5px; }
+  .card li { margin: 4px 0; }
+  .card .chips { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip { font-size: 12.5px; padding: 3px 10px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); background: var(--panel-2); }
+  .card .links { margin-top: auto; padding-top: 16px; display: flex; gap: 18px; flex-wrap: wrap; font-size: 14.5px; }
+  .card .note { color: var(--muted); font-size: 14px; }
+
+  .also { margin-top: 18px; color: var(--muted); font-size: 15.5px; }
+  .also b { color: var(--text); font-weight: 700; }
+
+  .skills { margin-top: 26px; display: grid; grid-template-columns: 170px 1fr; gap: 10px 20px; }
+  .skills dt { color: var(--gold); font-size: 14px; letter-spacing: 1.5px; text-transform: uppercase; padding-top: 2px; }
+  .skills dd { color: #d5d9df; }
+
+  .timeline { margin-top: 26px; border-left: 1px solid var(--line); padding-left: 22px; }
+  .tl { position: relative; padding-bottom: 22px; }
+  .tl::before { content: ""; position: absolute; left: -27px; top: 9px; width: 9px; height: 9px; border-radius: 50%; background: var(--gold); }
+  .tl .when { color: var(--muted); font-size: 14px; }
+  .tl .what { font-weight: 700; color: #fff; }
+  .tl p { color: #c9ced6; font-size: 15.5px; }
+
+  .contact { text-align: center; padding: 80px 0 72px; }
+  .contact h2::after { margin: 10px auto 0; }
+  .contact p { margin: 16px auto 0; max-width: 560px; color: var(--muted); }
+
+  footer { border-top: 1px solid var(--line); padding: 22px 0 30px; color: var(--muted); font-size: 14px; }
+  footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+
+  @media (max-width: 760px) {
+    .hero { padding: 84px 0 72px; }
+    .grid { grid-template-columns: 1fr; }
+    .skills { grid-template-columns: 1fr; gap: 2px; }
+    .skills dd { margin-bottom: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="ring" aria-hidden="true"></div>
+  <div class="wrap inner">
+    <h1>Saad Ahmed Hafeez</h1>
+    <div class="role">Senior Software Engineer</div>
+    <div class="tags">Python · Full Stack · AI Agents</div>
+    <div class="bar" aria-hidden="true"></div>
+    <p class="lede">I build production software end to end, from Python backends and React/Next.js frontends to AI agents that do real work. 6+ years, clients in the US and Europe.</p>
+    <div class="cta">
+      <a class="btn primary" href="mailto:saadi.ahmed94@gmail.com">Get in touch</a>
+      <a class="btn" href="https://www.linkedin.com/in/saad-ahmed-15a0ab1a3/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a>
+      <a class="btn" href="https://github.com/Saadahmedhafeez"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.68.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>GitHub</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="work">
+    <h2>Selected work</h2>
+    <p class="intro">Most of my work is for clients or in private codebases, so here is what each project is and what I built. Ask me about any of them.</p>
+
+    <div class="grid">
+      <article class="card">
+        <div class="kicker">AI · HR-tech</div>
+        <h3>Universal HRMS: AI recruitment &amp; HR platform</h3>
+        <ul>
+          <li>LLM CV-to-job scoring (0–100 match with skills, experience and keyword breakdown) and "X% match" job recommendations</li>
+          <li>Adaptive AI mock interviews with automatic scoring, plus AI CV critique</li>
+          <li>AI assistant with 47 tools on Gemini, Groq, OpenAI and a self-hosted model, with failover and validated output</li>
+          <li>Next.js/TypeScript front end on a Django API of ~700 routes, used by ~420 people</li>
+        </ul>
+        <div class="chips"><span class="chip">Next.js</span><span class="chip">TypeScript</span><span class="chip">Django</span><span class="chip">LangGraph</span><span class="chip">PostgreSQL</span><span class="chip">LiveKit</span></div>
+        <div class="links"><a href="https://hrms-five-gamma.vercel.app/">Live dev build →</a><span class="note">login required</span></div>
+      </article>
+
+      <article class="card">
+        <div class="kicker">Sports-tech · US client</div>
+        <h3>IMVI: youth-sports video platform</h3>
+        <ul>
+          <li>Built end to end: architecture, AWS infrastructure, backend and dashboard</li>
+          <li>Next.js/TypeScript dashboard with 27 screens for clubs, teams, tournaments, players and sponsors</li>
+          <li>HLS video on Cloudflare Stream, Stripe subscriptions, Apple/Google sign-in, Firebase push, Twilio SMS</li>
+        </ul>
+        <div class="chips"><span class="chip">Next.js</span><span class="chip">Django</span><span class="chip">AWS</span><span class="chip">Cloudflare</span><span class="chip">Stripe</span></div>
+        <div class="links"><a href="http://imvi.media/">imvi.media →</a></div>
+      </article>
+
+      <article class="card">
+        <div class="kicker">Mobile · Published app</div>
+        <h3>Trivium Daily: picture quiz on Google Play</h3>
+        <ul>
+          <li>React Native/Expo quiz app with 500+ picture rounds across 7 categories, all bundled so they work offline</li>
+          <li>Live on Google Play with weekly and monthly subscriptions and AdMob ads</li>
+          <li>Being rebuilt as an online, multiplayer, AI-assisted game</li>
+        </ul>
+        <div class="chips"><span class="chip">React Native</span><span class="chip">Expo</span><span class="chip">TypeScript</span><span class="chip">AdMob</span></div>
+        <div class="links"><a href="https://play.google.com/store/apps/details?id=com.triviumdaily.app">Google Play →</a></div>
+      </article>
+
+      <article class="card">
+        <div class="kicker">Data · AI analytics · US client</div>
+        <h3>CXI: conversational analytics on Databricks</h3>
+        <ul>
+          <li>FastAPI backend with 85 endpoints on Databricks SQL Warehouses and Lakebase, over Unity Catalog data</li>
+          <li>Databricks Genie chat, so the team can ask questions about orders, returns and inventory in plain language</li>
+          <li>Built to handle platform limits: credential refresh, compute that scales to zero, and clear API errors</li>
+        </ul>
+        <div class="chips"><span class="chip">FastAPI</span><span class="chip">Databricks</span><span class="chip">Genie</span><span class="chip">PostgreSQL</span></div>
+        <div class="links"><span class="note">Private client project</span></div>
+      </article>
+
+      <article class="card">
+        <div class="kicker">AI · Mobile</div>
+        <h3>PocketPilot: AI expense tracker</h3>
+        <ul>
+          <li>Photograph a bill and Gemini reads every line; if the items don't add up to the total, a stronger model re-checks it</li>
+          <li>Spoken expenses, auto-categories, bill planning and a month-end summary</li>
+          <li>Offline-first on SQLite, with a small Supabase server for the AI proxy</li>
+        </ul>
+        <div class="chips"><span class="chip">React Native</span><span class="chip">Expo</span><span class="chip">Gemini</span><span class="chip">Supabase</span></div>
+        <div class="links"><span class="note">In testing</span></div>
+      </article>
+
+      <article class="card">
+        <div class="kicker">Sports analytics · Exit</div>
+        <h3>Lineups.com: acquired for $45M</h3>
+        <ul>
+          <li>Backend and query optimisation on a Django platform for NFL, NBA, MLB, NHL and college sports</li>
+          <li>Live sportsbook odds, fantasy projections, Celery/Redis pipelines and serverless jobs on AWS Lambda</li>
+        </ul>
+        <div class="chips"><span class="chip">Django</span><span class="chip">Celery</span><span class="chip">Redis</span><span class="chip">AWS Lambda</span></div>
+        <div class="links"><a href="https://www.lineups.com/">lineups.com →</a></div>
+      </article>
+    </div>
+
+    <p class="also"><b>Also:</b> fintech reporting for <b>Simpled Card</b> (Pentaho-to-Python ETL, exports to Exact, AFAS, SAP and Twinfield, multilingual notification emails) and CRM data sync for <a href="https://www.maverickre.com/">Maverick</a> (Follow Up Boss).</p>
+  </section>
+
+  <section id="skills">
+    <h2>What I work with</h2>
+    <dl class="skills">
+      <dt>Backend</dt><dd>Python, FastAPI, Django &amp; DRF, Celery, Redis, REST APIs, PostgreSQL, MySQL</dd>
+      <dt>Frontend &amp; mobile</dt><dd>TypeScript, React, Next.js, Tailwind, React Native / Expo</dd>
+      <dt>AI</dt><dd>Claude, OpenAI, Gemini, Groq, LangGraph, tool calling, structured output, RAG, self-hosted models</dd>
+      <dt>Cloud &amp; data</dt><dd>AWS, DigitalOcean, Vercel, Docker, Databricks, Supabase, Firebase, Cloudflare, CircleCI</dd>
+      <dt>Integrations</dt><dd>Stripe, Twilio, SendGrid, Shopify, Jira, Zoom, LiveKit, CRMs, accounting ERPs</dd>
+    </dl>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="timeline">
+      <div class="tl">
+        <div class="when">Apr 2021 – present · Lahore</div>
+        <div class="what">Senior Software Engineer, Kavtech Solutions</div>
+        <p>Backend, infrastructure and AI lead across six client and internal products. I own features from idea to deployment, mentor developers and work directly with clients.</p>
+      </div>
+      <div class="tl">
+        <div class="when">Sep 2020 – Apr 2021 · Lahore</div>
+        <div class="what">Associate Software Engineer, IKS Logics</div>
+        <p>Django and Flask backends, scrapers, test automation and Docker environments.</p>
+      </div>
+      <div class="tl">
+        <div class="when">2016 – 2020</div>
+        <div class="what">BS Computer Science, University of Central Punjab</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Let's build something</h2>
+    <p>Open to full-stack and AI engineering roles, remote. The fastest way to reach me is email.</p>
+    <div class="cta">
+      <a class="btn primary" href="mailto:saadi.ahmed94@gmail.com">saadi.ahmed94@gmail.com</a>
+      <a class="btn" href="https://www.linkedin.com/in/saad-ahmed-15a0ab1a3/">LinkedIn</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Saad Ahmed Hafeez</span>
+    <span>Apps: <a href="https://play.google.com/store/apps/details?id=com.triviumdaily.app">Trivium Daily</a> · <a href="/trivium-privacy/">Privacy policy</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
