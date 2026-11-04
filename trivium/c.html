@@ -75,7 +75,9 @@ main{max-width:460px; margin:0 auto; padding:28px 16px 40px; display:flex; flex-
 (function () {
   var PKG = 'com.triviumdaily.app';
   var PLAY = 'https://play.google.com/store/apps/details?id=' + PKG;
-  var token = (new URLSearchParams(location.search).get('c') || '').replace(/[^A-Za-z0-9_-]/g, '');
+  var params = new URLSearchParams(location.search);
+  var brag = !params.get('c') && !!params.get('p');
+  var token = (params.get('c') || params.get('p') || '').replace(/[^A-Za-z0-9_-]/g, '');
 
   function decode(t) {
     try {
@@ -84,7 +86,8 @@ main{max-width:460px; margin:0 auto; padding:28px 16px 40px; display:flex; flex-
       var bin = atob(b64), pct = '';
       for (var i = 0; i < bin.length; i++) pct += '%' + ('0' + bin.charCodeAt(i).toString(16)).slice(-2);
       var raw = JSON.parse(decodeURIComponent(pct));
-      return raw && raw.v === 1 && typeof raw.m === 'string' ? raw : null;
+      if (!raw || raw.v !== 1) return null;
+      return brag ? (raw.k === 'p' ? raw : null) : typeof raw.m === 'string' ? raw : null;
     } catch (e) { return null; }
   }
   // Same scoring as the app: 100 minus 3 a second, at least 10, for a right answer.
@@ -106,7 +109,14 @@ main{max-width:460px; margin:0 auto; padding:28px 16px 40px; display:flex; flex-
     return;
   }
   var name = (typeof ch.n === 'string' && ch.n.trim()) || 'A friend';
-  if (typeof ch.r === 'number') {
+  if (brag) {
+    text('kicker', name + ' shared their Trivium progress');
+    text('title', ch.s > 1 ? name + ' is on a ' + ch.s + '-day streak 🔥' : name + ' is playing Trivium');
+    document.getElementById('score').textContent = 'Level ' + (ch.l || 1);
+    document.getElementById('scoreWrap').lastChild.textContent = ch.a !== null && ch.a !== undefined ? '  ·  ' + ch.a + '% right' : '';
+    document.querySelector('.card ul').innerHTML = '<li>Open Trivium to see ' + name + "'s card</li><li>Play 10 picture questions</li><li>Send them back as a challenge: the higher score wins</li>";
+    open.textContent = 'Challenge ' + name + ' in Trivium';
+  } else if (typeof ch.r === 'number') {
     text('kicker', 'Your challenge was played');
     text('title', name + ' scored ' + score(ch.m) + ' against your ' + ch.r);
     document.getElementById('scoreWrap').classList.add('hidden');
@@ -118,12 +128,12 @@ main{max-width:460px; margin:0 auto; padding:28px 16px 40px; display:flex; flex-
   document.title = name + ' challenged you on Trivium';
 
   // A fresh install gets the challenge through Play's install referrer.
-  var playWithChallenge = PLAY + '&referrer=' + encodeURIComponent('utm_source=challenge&utm_medium=link&challenge=' + token);
+  var playWithChallenge = PLAY + '&referrer=' + encodeURIComponent('utm_source=challenge&utm_medium=' + (brag ? 'streak' : 'link') + '&' + (brag ? 'brag' : 'challenge') + '=' + token);
   get.href = playWithChallenge;
   var android = /Android/i.test(navigator.userAgent);
   if (android) {
     // Opens Trivium if installed, otherwise Chrome follows the fallback to Play.
-    open.href = 'intent://challenge?c=' + token + '#Intent;scheme=trivium;package=' + PKG +
+    open.href = 'intent://challenge?' + (brag ? 'p' : 'c') + '=' + token + '#Intent;scheme=trivium;package=' + PKG +
       ';S.browser_fallback_url=' + encodeURIComponent(playWithChallenge) + ';end';
     setTimeout(function () { location.href = open.href; }, 300);
   } else {
