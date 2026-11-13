@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PocketPilot Privacy Policy</title>
+<style>
+  :root { --bg: #f7f8f6; --card: #fff; --text: #1d2420; --muted: #5b6660; --green: #0a7a52; --line: #e3e7e4; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #0f1412; --card: #171d1a; --text: #e8ece9; --muted: #9aa6a0; --green: #3fc48f; --line: #26302b; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+  header { border-bottom: 3px solid var(--green); padding-bottom: 16px; margin-bottom: 24px; }
+  h1 { margin: 0; font-size: 30px; }
+  h2 { font-size: 20px; margin: 32px 0 8px; color: var(--green); }
+  .muted { color: var(--muted); }
+  table { width: 100%; border-collapse: collapse; background: var(--card); margin: 12px 0; font-size: 15px; }
+  th, td { text-align: left; vertical-align: top; padding: 10px 12px; border: 1px solid var(--line); }
+  th { font-weight: 600; }
+  .table-wrap { overflow-x: auto; }
+  a { color: var(--green); }
+  ul { padding-left: 22px; }
+</style>
+</head>
+<body>
+<main>
+<header>
+  <h1>PocketPilot Privacy Policy</h1>
+  <div class="muted">Last updated: 13 November 2026</div>
+</header>
+
+<p>PocketPilot ("the app", "we") is a personal budget and expense tracker for Android and iPhone. This policy explains what
+information the app uses, where it goes, and the choices you have. The short version: <strong>your expenses and
+money data are stored on your phone</strong>, and are only copied to your own Google Drive if you turn backup on.
+We do not sell your data and the app has no ads.</p>
+
+<h2>1. Data stored on your phone</h2>
+<p>Everything you enter stays in a database on your device: expenses, categories, budgets and income, bills and
+subscriptions, events, udhaar (lent and borrowed money), your shopping list, the secret balance, the shop details read from your
+bills (name, address, phone, discounts), and any bill photos you choose to keep. We cannot see this data. Uninstalling the app deletes it, unless you have backed it up to Google
+Drive.</p>
+
+<h2>2. Data sent to our server and AI services</h2>
+<p>Some features use artificial intelligence. Those requests go through PocketPilot's server (hosted by
+Supabase), which forwards them to an AI provider and returns the answer.
+Only the content needed for that one feature is sent:</p>
+<div class="table-wrap">
+<table>
+  <tr><th>Feature</th><th>What is sent</th><th>Processed by</th></tr>
+  <tr><td>Scan a bill or receipt</td><td>The bill photo(s) you take or share, or the text of a bill's QR code</td>
+      <td>Google Gemini</td></tr>
+  <tr><td>Speak expenses</td><td>The voice recording you make with the mic button</td>
+      <td>Groq</td></tr>
+  <tr><td>Automatic categories</td><td>Item names the app could not categorize by itself (for example "shawarma")</td>
+      <td>Groq</td></tr>
+  <tr><td>Ask AI, AI coach advice</td><td>Your question and a summary of your recent spending: totals by category and
+      month, your most frequent items, your bills and subscriptions, and udhaar balances with the names you gave
+      those people. Your own name, email and account details are not included.</td><td>Groq</td></tr>
+</table>
+</div>
+<p>Our server does not store the photos, recordings, questions or answers. It only checks your plan and counts how
+many AI requests you have made. The AI providers process the content to return a result, under their own privacy
+policies.</p>
+<p>One exception, to improve the app's categories: when an item fits none of the app's categories, our server keeps
+that item's name (for example "sheesha koyla"), its meaning in English, its language, the AI's suggested new
+category, your phone's language setting, the currency you picked and the app version. This record has no account ID,
+amount or date, so it can't be linked to you or to your spending. We use these records only to decide which
+categories to add.</p>
+<p>A second exception, to compare prices between shops: when you save a scanned bill or receipt, our server keeps
+its items: each item's name and category, the price paid, the discount, the shop's name, address, phone number and
+country as printed on the receipt, the currency, the purchase date, your phone's language setting and the app
+version. This record has no account ID, so it can't be linked to you, and for the same reason it can't be deleted on
+request. We use these records only to show which shops are cheaper and where discounts are found. Expenses you type
+or speak are not sent.</p>
+
+<p>A third exception, to learn which shops people prefer: when you answer a "Help your coach" question (the same item
+bought at two shops: which was better, and why), our server keeps the item's name, the two shops' names, your answer
+and reasons, the two prices paid, the currency, your phone's region and language setting and the app version. Skipped
+questions are not sent. This record has no account ID, so it can't be linked to you, and for the same reason it can't
+be deleted on request.</p>
+
+<h2>3. Your account</h2>
+<p>When you first open the app, it creates an anonymous account on our server; you don't need to sign up. This
+account has a random ID and holds only:</p>
+<ul>
+  <li>the number of AI requests you made each day (to apply daily limits),</li>
+  <li>which free bill scans you have used,</li>
+  <li>your PocketPilot Pro status (plan and expiry date),</li>
+  <li>for notifications from PocketPilot (app updates and news): your phone's push token from Google Firebase Cloud
+      Messaging, a random install ID, the app version, your phone's language setting and time zone. The token is
+      deleted once Firebase reports it no longer works (for example after you uninstall the app).</li>
+</ul>
+<p>If you connect Google (for Drive backup), your account is linked to your Google account, so your Pro plan follows
+you to a new phone or a reinstall. We then receive your Google account's email address and name from Google Sign-In.</p>
+
+<h2>4. Google Drive backup (optional)</h2>
+<p>If you turn on Drive backup, the app saves a backup file, monthly CSV files and your kept bill photos in a
+<em>PocketPilot</em> folder in <strong>your own</strong> Google Drive. The app uses the <code>drive.file</code>
+permission, which only allows it to see files it created itself; it cannot read your other Drive files. These
+backups are in your Drive, not on our server, and you can delete them at any time.</p>
+<p>PocketPilot's use of information received from Google APIs adheres to the
+<a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>,
+including the Limited Use requirements.</p>
+
+<h2>5. Purchases</h2>
+<p>On Android, PocketPilot Pro subscriptions are handled by Google Play and
+RevenueCat. We never receive your card or payment details. RevenueCat
+tells our server which plan you bought and when it expires, linked to your anonymous account ID.</p>
+
+<h2>6. Permissions</h2>
+<p>The app asks for each permission only when you first use the feature that needs it:</p>
+<ul>
+  <li><strong>Camera:</strong> to photograph bills and read QR codes.</li>
+  <li><strong>Microphone:</strong> to record spoken expenses.</li>
+  <li><strong>Photos:</strong> to pick a bill photo from your gallery.</li>
+  <li><strong>Notifications:</strong> for the nightly reminder and bill due-date reminders (created on your phone), and for
+      messages from PocketPilot such as app updates (sent by our server through Google Firebase Cloud Messaging, or Apple Push Notification service on iPhone).</li>
+  <li><strong>Fingerprint / face:</strong> for app lock. Biometric data is handled by Android or iOS and never reaches the app.</li>
+</ul>
+
+<h2>7. What we don't do</h2>
+<ul>
+  <li>We don't sell or rent your data, or share it for advertising.</li>
+  <li>The app has no ads and no third-party analytics or tracking.</li>
+  <li>We don't collect your location or contacts.</li>
+</ul>
+
+<h2>8. Security</h2>
+<p>All connections to our server and to the AI providers use encryption (HTTPS). AI provider keys are kept on the
+server, never in the app. You can turn on app lock to protect the app with your fingerprint, face or PIN.</p>
+
+<h2>9. Keeping and deleting data</h2>
+<p>Data on your phone stays until you delete it or uninstall the app. Deleted items are kept in
+<em>Settings › Recently deleted</em> for 30 days so you can restore them, then removed for good. To delete your
+account data on our server (AI usage counts, Pro status and push token), email us at the address below from the Google account
+you connected, and we will delete it within 30 days. If you never connected Google, your anonymous account is not
+linked to you in any way and holds only what is listed in section 3.</p>
+
+<h2>10. Children</h2>
+<p>PocketPilot is not directed at children under 13, and we do not knowingly collect data from them.</p>
+
+<h2>11. Changes to this policy</h2>
+<p>If we change this policy, we will update this page and the "Last updated" date.</p>
+
+<h2>12. Contact</h2>
+<p>Questions or requests about your privacy: <a href="mailto:saadi.ahmed94@gmail.com">saadi.ahmed94@gmail.com</a></p>
+</main>
+</body>
+</html>
