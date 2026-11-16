@@ -62,6 +62,7 @@ th,td{text-align:left; padding:.7rem .95rem; border-bottom:1px solid var(--borde
   vertical-align:top; font-weight:400; color:var(--muted);}
 th{color:var(--text); font-weight:600; white-space:nowrap; width:11rem;}
 tr:last-child th,tr:last-child td{border-bottom:none;}
+.contact a{color:inherit;}
 .contact{font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:.95rem; color:var(--text);
   background:var(--surface-2); border:1px solid var(--border); border-radius:8px;
   padding:.75rem 1rem; display:inline-block;}
@@ -75,13 +76,13 @@ footer{margin-top:3.5rem; padding-top:1.4rem; border-top:1px solid var(--border)
   <header class="masthead">
     <span class="eyebrow">Privacy Policy</span>
     <h1>Trivium Daily</h1>
-    <div class="meta"><span>com.triviumdaily.app</span><span>Effective 4 November 2026</span></div>
+    <div class="meta"><span>com.triviumdaily.app</span><span>Effective 16 November 2026</span></div>
   </header>
 <section id="summary">
 <div class="s-head">
 <h2>In short</h2></div>
 <p><b>Trivium asks for no personal information, has no account or sign-up, and runs no analytics.</b> Everything you do in the app &mdash; your streak, level, XP, unlocked categories and settings &mdash; is saved only on your own device, and we have no server that could store anything about you.</p>
-<p>Free players see ads: an optional video ad can open one more Learn stage, show the answer to an extra riddle or keep a streak you missed yesterday, and a full-screen ad may play when you start another quiz round or match, and once a day after the Daily Trivia, always at least three minutes apart. Pro has no ads. They are delivered by Google AdMob and described under <b>Advertising</b> below.</p>
+<p>Free players see ads: an optional video ad can open one more Learn stage, show the answer to a riddle or keep a streak you missed yesterday, and a full-screen ad may play when you start another quiz round or match, and once a day after the Daily Trivia. Pro has no ads. They are delivered by Google AdMob and described under <b>Advertising</b> below.</p>
 </section>
 <section id="stored">
 <div class="s-head">
@@ -104,22 +105,22 @@ footer{margin-top:3.5rem; padding-top:1.4rem; border-top:1px solid var(--border)
 <h3>Google Play billing</h3>
 <p>If you buy a subscription, the entire transaction is handled by Google Play. The app never sees or handles your name, email, or payment details &mdash; it only receives back whether a subscription is currently active. Google's handling of that purchase is governed by the Google Play Terms of Service and Google's Privacy Policy.</p>
 <h3>Google AdMob</h3>
-<p>An ad is requested only when you choose to watch one to open a stage. See <b>Advertising</b> below.</p>
+<p>Used for the optional video ads and the full-screen ads between rounds. See <b>Advertising</b> below.</p>
 </section>
 <section id="third">
 <div class="s-head">
 <h2>Third-party components</h2></div>
-<p>The app is built with the Expo and React Native frameworks and includes these Google components. We list them because they ship inside the app even though we do not use them to gather anything about you:</p>
-<ul><li><b>Google Play Billing</b> &mdash; required to offer subscriptions. Active only when you open the subscription screen or make a purchase.</li><li><b>Google Mobile Ads (AdMob)</b> &mdash; used for the optional video ads that open extra Learn stages and extra riddle answers, and the full-screen ads described under <b>Advertising</b>.</li><li><b>Firebase Cloud Messaging</b> &mdash; used to deliver occasional announcements, described under <b>Notifications</b> below.</li></ul>
-<p>The app contains <b>no analytics SDK and no crash-reporting SDK</b> of any kind.</p>
+<p>The app is built with the Expo and React Native frameworks and includes these Google components. We list them because they ship inside the app:</p>
+<ul><li><b>Google Play Billing</b> &mdash; required to offer subscriptions. Active only when you open the subscription screen or make a purchase.</li><li><b>Google Mobile Ads (AdMob)</b> &mdash; used for the optional video ads that open extra Learn stages and extra riddle answers, and the full-screen ads described under <b>Advertising</b>.</li><li><b>Firebase Cloud Messaging</b> &mdash; used to deliver occasional announcements, described under <b>Notifications</b> below.</li><li><b>Firebase Crashlytics</b> &mdash; if the app crashes or hits an unexpected error, a crash report is sent to Google Firebase so we can fix it: the error and where in the app it happened, the app version, device model, operating system version and a random installation ID. It contains no name, email or account and is not linked to you or used for ads.</li></ul>
+<p>The app contains <b>no analytics SDK</b>.</p>
 </section>
 <section id="ads">
 <div class="s-head">
 <span class="kicker">Optional, and never required to play</span>
 <h2>Advertising</h2></div>
-<p><b>How ads appear.</b> Each Learn section has free stages. After those, a locked stage can be opened with a Pro subscription or by choosing to watch one short video ad. Today's riddles are always free; the answer to each extra riddle beyond them can be opened the same way. Free players also see a <b>full-screen ad when they start another quiz round or 1 vs 1 match</b> after finishing one (the first round after opening the app never has one), and at most once a day after the Daily Trivia, always at least three minutes apart; each can be closed after a few seconds. Full-screen ads never appear in the first two days after installing, right after a video ad you chose to watch, for Pro subscribers, or anywhere inside the Kids Learning Zone. There are no banner ads.</p>
+<p><b>How ads appear.</b> Each Learn section has free stages. After those, a locked stage can be opened with a Pro subscription or by choosing to watch one short video ad. The first two of today's riddles are free; the answer to each other riddle can be opened the same way. If no ad is available, the stage, riddle or streak opens free a few times a day. Free players also see a <b>full-screen ad when they start another quiz round or 1 vs 1 match</b> after finishing one (the first round after opening the app never has one), and at most once a day after the Daily Trivia; each can be closed after a few seconds. If an ad is still loading, the next round waits for it for up to 30 seconds and then starts anyway. Full-screen ads never appear for Pro subscribers or anywhere inside the Kids Learning Zone. There are no banner ads.</p>
 <p>These ads are delivered by <b>Google AdMob</b>. To show an ad and to prevent fraud, Google receives technical information from your device such as your IP address, device type and operating system, an advertising identifier, and whether the ad was viewed or completed. This is collected and controlled by Google under the <b>Google Privacy Policy</b>, not by us. We receive no personal data from Google &mdash; the app is told only whether an ad loaded and whether a reward was earned.</p>
-<p>Because the app includes a Kids Learning Zone, ad requests are configured restrictively: ads are limited to the most conservative content rating, requests are flagged as child-directed and as being for users under the age of consent, and <b>personalised (interest-based) advertising is switched off</b>. Ads never appear anywhere inside the Kids Learning Zone.</p>
+<p>The app is meant for players aged 13 and over. Ads are limited to a family-friendly content rating (PG). Where the law requires consent (the European Economic Area, the United Kingdom and Switzerland), Google's consent message asks you first, and ads are personalised only if you agree; you can change your choice at any time in <b>Settings &rsaquo; Ad privacy choices</b>. Elsewhere, Google may show ads based on your interests; you can turn this off in your device settings under Google &rsaquo; Ads. If your choice can't be read, ads are not personalised. Ads never appear anywhere inside the Kids Learning Zone.</p>
 <p>You can reset or delete your advertising identifier at any time in your device settings under Google &rsaquo; Ads.</p>
 </section>
 <section id="challenges">
@@ -140,7 +141,7 @@ footer{margin-top:3.5rem; padding-top:1.4rem; border-top:1px solid var(--border)
 <div class="s-head">
 <span class="kicker">Kids Learning Zone</span>
 <h2>Children's privacy</h2></div>
-<p>The app includes a Kids Learning Zone with questions written for ages 4&ndash;12. This section deliberately sits outside the rest of the app's systems: <b>no online play, no advertising, and no subscription prompts</b>, and leaving it requires a grown-up to answer a sum or press and hold.</p>
+<p>Trivium is meant for players aged 13 and over. It includes a Kids Learning Zone: easy questions for a <b>parent to use with their child</b>, reading the questions out and checking the answers together. It is made for parents, not for children to use on their own. This section deliberately sits outside the rest of the app's systems: <b>no online play, no advertising, and no subscription prompts</b>, and leaving it requires a grown-up to answer a sum or press and hold.</p>
 <p>Because the app collects no personal information from anyone, it collects none from children either. We do not knowingly collect personal information from any user regardless of age. There is no profile, no messaging, no user-generated content, and no way for one user to contact another.</p>
 </section>
 <section id="perms">
@@ -164,7 +165,7 @@ footer{margin-top:3.5rem; padding-top:1.4rem; border-top:1px solid var(--border)
 <div class="s-head">
 <h2>Contact</h2></div>
 <p>Questions about this policy or about privacy in Trivium Daily can be sent to:</p>
-<p class="contact">testapi444@gmail.com</p>
+<p class="contact"><a href="mailto:playtrivium@gmail.com">playtrivium@gmail.com</a></p>
 </section>
   <footer>This policy covers the Trivium Daily mobile application only. It does not cover the Open Trivia
     Database or Google Play, which are operated independently under their own privacy policies.</footer>
