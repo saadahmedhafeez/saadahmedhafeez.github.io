@@ -89,8 +89,10 @@ main{max-width:460px; margin:0 auto; padding:28px 16px 40px; display:flex; flex-
       var bin = atob(b64), pct = '';
       for (var i = 0; i < bin.length; i++) pct += '%' + ('0' + bin.charCodeAt(i).toString(16)).slice(-2);
       var raw = JSON.parse(decodeURIComponent(pct));
-      if (!raw || raw.v !== 1) return null;
-      return brag ? (raw.k === 'p' ? raw : null) : typeof raw.m === 'string' ? raw : null;
+      if (!raw) return null;
+      // Brag cards are v1; challenges are v1 (pictures only) or v2 (mixed rounds, app 2.3+), as in src/game/challenge.ts.
+      if (brag) return raw.v === 1 && raw.k === 'p' ? raw : null;
+      return (raw.v === 1 || raw.v === 2) && typeof raw.m === 'string' ? raw : null;
     } catch (e) { return null; }
   }
   // Same scoring as the app: 100 minus 3 a second, at least 10, for a right answer.
