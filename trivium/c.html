@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Trivium Challenge</title>
-<meta name="description" content="A friend challenged you to 10 picture questions on Trivium. Can you beat their score?">
+<meta name="description" content="A friend challenged you to 10 questions on Trivium. Can you beat their score?">
 <meta property="og:title" content="You've been challenged on Trivium">
-<meta property="og:description" content="Same 10 pictures, same timer. Can you beat their score?">
+<meta property="og:description" content="Same 10 questions, same timer. Can you beat their score?">
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -60,7 +60,7 @@ main{max-width:460px; margin:0 auto; padding:28px 16px 40px; display:flex; flex-
 
   <section class="card">
     <ul>
-      <li>The same <b>10 pictures</b> your friend played</li>
+      <li>The same <b>10 questions</b> your friend played</li>
       <li>20 seconds each. Faster right answers score more</li>
       <li>Your friend answers live beside you, exactly as they did</li>
     </ul>
@@ -75,6 +75,9 @@ main{max-width:460px; margin:0 auto; padding:28px 16px 40px; display:flex; flex-
 (function () {
   var PKG = 'com.triviumdaily.app';
   var PLAY = 'https://play.google.com/store/apps/details?id=' + PKG;
+  // The app's numeric Apple ID once the App Store listing exists (keep in step with src/storeLinks.ts).
+  var APP_STORE_ID = ''; // set to '6831896176' once the App Store listing is live
+  var APP_STORE = APP_STORE_ID ? 'https://apps.apple.com/app/id' + APP_STORE_ID : null;
   var params = new URLSearchParams(location.search);
   var brag = !params.get('c') && !!params.get('p');
   var token = (params.get('c') || params.get('p') || '').replace(/[^A-Za-z0-9_-]/g, '');
@@ -114,13 +117,17 @@ main{max-width:460px; margin:0 auto; padding:28px 16px 40px; display:flex; flex-
     text('title', ch.s > 1 ? name + ' is on a ' + ch.s + '-day streak 🔥' : name + ' is playing Trivium');
     document.getElementById('score').textContent = 'Level ' + (ch.l || 1);
     document.getElementById('scoreWrap').lastChild.textContent = ch.a !== null && ch.a !== undefined ? '  ·  ' + ch.a + '% right' : '';
-    document.querySelector('.card ul').innerHTML = '<li>Open Trivium to see ' + name + "'s card</li><li>Play 10 picture questions</li><li>Send them back as a challenge: the higher score wins</li>";
+    document.querySelector('.card ul').innerHTML = '<li>Open Trivium to see ' + name + "'s card</li><li>Play 10 questions</li><li>Send them back as a challenge: the higher score wins</li>";
     open.textContent = 'Challenge ' + name + ' in Trivium';
   } else if (typeof ch.r === 'number') {
     text('kicker', 'Your challenge was played');
     text('title', name + ' scored ' + score(ch.m) + ' against your ' + ch.r);
     document.getElementById('scoreWrap').classList.add('hidden');
     open.textContent = 'See the result in Trivium';
+  } else if (ch.m.split(',').every(function (x) { return Number(x) <= -200; })) {
+    // An open challenge (sent before the sender played, app 2.4+): no score to beat yet.
+    text('title', name + ' challenged you');
+    document.getElementById('scoreWrap').textContent = '10 questions. Play them, then send ' + name + ' your score: the higher score wins.';
   } else {
     text('title', name + ' challenged you');
     text('score', score(ch.m));
@@ -136,9 +143,21 @@ main{max-width:460px; margin:0 auto; padding:28px 16px 40px; display:flex; flex-
     open.href = 'intent://challenge?' + (brag ? 'p' : 'c') + '=' + token + '#Intent;scheme=trivium;package=' + PKG +
       ';S.browser_fallback_url=' + encodeURIComponent(playWithChallenge) + ';end';
     setTimeout(function () { location.href = open.href; }, 300);
+  } else if (/iPhone|iPad|iPod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)) {
+    // iOS has no install referrer, so the challenge opens only when Trivium is already installed.
+    open.href = 'trivium://challenge?' + (brag ? 'p' : 'c') + '=' + token;
+    if (APP_STORE) {
+      get.href = APP_STORE;
+      get.textContent = 'Get Trivium on the App Store';
+      text('note', 'If Trivium is installed, it opens straight to the challenge. If not, install it from the App Store, then come back and tap this link again.');
+    } else {
+      get.classList.add('hidden');
+      text('note', 'Trivium opens straight to the challenge if it is installed on this iPhone.');
+    }
   } else {
     open.href = playWithChallenge;
-    text('note', 'Trivium is on Android for now. Open this link on an Android phone to play the challenge.');
+    // Says Android until the App Store listing exists (APP_STORE_ID set).
+    text('note', APP_STORE ? 'Trivium is on Android and iPhone. Open this link on your phone to play the challenge.' : 'Trivium is on Android for now. Open this link on an Android phone to play the challenge.');
   }
 })();
 </script>
